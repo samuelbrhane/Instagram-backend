@@ -19,6 +19,10 @@ app.use(morgan("tiny"));
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.get("/", (req, res) => {
+  res.send("<h1>Instagram Clone</h1>");
+});
+
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
